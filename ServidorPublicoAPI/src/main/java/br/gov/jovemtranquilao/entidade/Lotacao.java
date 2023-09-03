@@ -5,6 +5,8 @@ import java.util.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Lotacao {
@@ -12,11 +14,13 @@ public class Lotacao {
 	@Column(name = "lot_id")
 	private Integer lotId;
 
-	@Column(name = "pes_id")
-	private Integer pesId;
+	@ManyToOne
+	@JoinColumn(name = "pes_id")
+	private Pessoa pesId;
 
-	@Column(name = "unid_id")
-	private Integer unidId;
+	@ManyToOne
+	@JoinColumn(name = "unid_id")
+	private Unidade unidId;
 
 	@Column(name = "lot_data_lotacao")
 	private Date dataLotacao;
@@ -26,5 +30,6 @@ public class Lotacao {
 
 	@Column(name = "portaria")
 	private String matricula;
+
 
 }
