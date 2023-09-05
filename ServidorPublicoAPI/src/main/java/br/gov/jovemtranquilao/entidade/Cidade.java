@@ -5,13 +5,17 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import lombok.Data;
 
 @Entity
+@Data
 public class Cidade {
 	@Id
+	@GeneratedValue
 	@Column(name = "cid_id")
 	private Integer id;
 
@@ -24,5 +28,5 @@ public class Cidade {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "cid_id")
 	private List<Endereco> enderecoList;
-
+	
 }
