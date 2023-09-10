@@ -1,8 +1,8 @@
 package br.gov.jovemtranquilao.business;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 
 import br.gov.jovemtranquilao.entidade.Cidade;
@@ -22,8 +22,8 @@ public class CidadeBusiness {
 		return cidadeRepository.save(cidade);
 	}
 
-	public List<Cidade> findAll() {
-		return cidadeRepository.findAll();
+	public Page<Cidade> findAll(Pageable pageable) {
+		return cidadeRepository.findAll(pageable);
 	}
 	
 	public Cidade update(Cidade cidade) throws EntityDoesNotExistsException, EntityAlreadyExistsException {

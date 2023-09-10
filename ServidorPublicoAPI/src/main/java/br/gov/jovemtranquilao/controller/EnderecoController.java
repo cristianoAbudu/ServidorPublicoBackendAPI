@@ -10,36 +10,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.jovemtranquilao.business.CidadeBusiness;
-import br.gov.jovemtranquilao.entidade.Cidade;
+import br.gov.jovemtranquilao.business.EnderecoBusiness;
+import br.gov.jovemtranquilao.entidade.Endereco;
 import br.gov.jovemtranquilao.exception.EntityAlreadyExistsException;
 import br.gov.jovemtranquilao.exception.EntityDoesNotExistsException;
 
 @RestController()
-@RequestMapping("/cidade")
-public class CidadeController {
+@RequestMapping("/endereco")
+public class EnderecoController {
 	
 	
 	@Autowired
-	private CidadeBusiness cidadeBusiness;
+	private EnderecoBusiness enderecoBusiness;
 	
 	@GetMapping
-	public Page<Cidade> get(Pageable pageable) {
-		return cidadeBusiness.findAll(pageable);
+	public Page<Endereco> get(Pageable pageable) {
+		return enderecoBusiness.findAll(pageable);
 	}
 	
 	@PostMapping
-	public Cidade post(
-		@RequestBody Cidade cidade
+	public Endereco post(
+		@RequestBody Endereco endereco
 	) throws EntityAlreadyExistsException {
-		return cidadeBusiness.add(cidade);
+		return enderecoBusiness.add(endereco);
 	}
 	
 	@PutMapping
-	public Cidade put(
-		@RequestBody Cidade cidade
+	public Endereco put(
+		@RequestBody Endereco endereco
 	) throws EntityAlreadyExistsException, EntityDoesNotExistsException {
-		return cidadeBusiness.update(cidade);
+		return enderecoBusiness.update(endereco);
 	}
 	
 }
