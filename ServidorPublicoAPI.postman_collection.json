@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "83d5e13a-d234-4cf0-8eb7-f57889175de3",
+		"name": "ServidorPublicoAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30345772"
+	},
+	"item": [
+		{
+			"name": "Unidade/Find All",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Unidade/Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\" : \"Unidade\",\n    \"sigla\" : \"Sigla\",\n    \"lotacaoList\" : [],\n    \"enderecoList\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/unidade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"unidade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unidade/Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\" : \"Unidade\",\n    \"sigla\" : \"Sigla\",\n    \"lotacaoList\" : [],\n    \"enderecoList\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/unidade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"unidade"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
